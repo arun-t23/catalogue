@@ -2,7 +2,7 @@ pipeline {
 
     agent {
         node {
-
+            label 'AGENT-1'
         }
     }
     environment {
@@ -50,7 +50,7 @@ pipeline {
                             docker tag ${PROJECT}/${COMPONENT}:${appVersion} ${ACC_ID}.dkr.ecr.us-east-1.amazonaws.com/${PROJECT}/${COMPONENT}:${appVersion}
 
                             docker images
-                            
+
                             docker push ${ACC_ID}.dkr.ecr.us-east-1.amazonaws.com/${PROJECT}/${COMPONENT}:${appVersion}
                         """
                     }
