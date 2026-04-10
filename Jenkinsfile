@@ -1,4 +1,4 @@
-pipeline {
+pipeline{
 
     agent {
         node {
@@ -14,7 +14,7 @@ pipeline {
     }
     options {
         timeout(time: 10, unit: 'MINUTES')
-        disableConcurrentBuild()
+        disableConcurrentBuilds()
     }
 
     // BUILD SECTION
@@ -66,10 +66,10 @@ pipeline {
             success{
                 echo 'I will run if success'
             }
-            failure {
+            failure{
                 echo 'I will run if failing'
             }
-            aborted {
+            aborted{
                 echo 'Pipeline is aborted'
             }
         }
